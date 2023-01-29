@@ -1,16 +1,18 @@
-# This is a sample Python script.
+extends Node2D
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+const GrassEffect = preload("res://Effects/GrassEffect.tscn")
+
+func create_grass_effect():
+	var grassEffect = GrassEffect.instance()
+	get_parent().add_child(grassEffect)
+	grassEffect.global_position = global_position
+
+func _on_Hurtbox_area_entered(area):
+	create_grass_effect()
+	queue_free()
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def grasseffect ()
+    x = 123
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    grasseffect()
